@@ -8,9 +8,12 @@ function addTodo(){
 
         let todoItem = document.createElement("div");
         todoItem.className = "todo-item";
-        todoItem.textContent = todoText;
 
+        let todoItemText = document.createElement("p");
+        todoItemText.textContent = todoText;
+       
         todoList.appendChild(todoItem);
+        todoItem.appendChild(todoItemText);
 
         todoInput.vale = ""
     }
