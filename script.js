@@ -1,22 +1,22 @@
 
 function addTodo(){
-    let todoInput = document.getElementById("todo-input");
-    let todoText = todoInput.value.trim();
+    var todoInput = document.getElementById("todo-input");
+    var todoText = todoInput.value.trim();
 
     if(todoText !== ""){
-        let todoList = document.getElementById("todo-list");
+        var todoList = document.getElementById("todo-list");
 
-        let todoItem = document.createElement("div");
+        var todoItem = document.createElement("div");
         todoItem.className = "todo-item";
 
-        let todoItemText = document.createElement("p");
+        var todoItemText = document.createElement("p");
         todoItemText.textContent = todoText;
 
-        let completeButton = document.createElement("button");
+        var completeButton = document.createElement("button");
         completeButton.className = "complete-button";
         completeButton.textContent = "Completed";
 
-        let deleteButton = document.createElement("button");
+        var deleteButton = document.createElement("button");
         deleteButton.className = "delete-button";
         deleteButton.textContent = "Remove";
        
@@ -25,6 +25,21 @@ function addTodo(){
         todoItem.appendChild(completeButton);
         todoItem.appendChild(deleteButton);
 
-        todoInput.vale = ""
+        todoInput.value = ""
+
+        todoItem.addEventListener("mouseover", function() {
+            let buttons = this.querySelectorAll(".complete-button, .delete-button");
+            for (let j = 0; j < buttons.length; j++) {
+                buttons[j].style.display = "inline-block";
+            }
+        });
+
+        todoItem.addEventListener("mouseout", function() {
+            let buttons = this.querySelectorAll(".complete-button, .delete-button");
+            for (let j = 0; j < buttons.length; j++) {
+                buttons[j].style.display = "none";
+            }
+        });
     }
 }
+
