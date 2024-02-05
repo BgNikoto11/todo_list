@@ -39,10 +39,31 @@
     margin: 0 auto; 
 }
 .todo-item{
-    height: 40px; 
+    height: 60px; 
     border-top: 1px solid black ;
+    display: flex;
+    align-items: center;
 }
 .todo-item p{
     margin: 0;
-    text-align: justify;
+    width: 75%;
+    float: left;
+    font-size: 1.5em;
+}
+.complete-button{
+    width: 10%;
+    height: 30px;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+
+}
+.delete-button{
+    width: 10%;
+    height: 30px;
+    margin-left: 5px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+
 }
