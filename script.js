@@ -5,6 +5,7 @@ function addTodo(){
 
     if(todoText !== ""){
         var todoList = document.getElementById("todo-list");
+        var completeList = document.getElementById("complete-list");
 
         var todoItem = document.createElement("div");
         todoItem.className = "todo-item";
@@ -25,7 +26,7 @@ function addTodo(){
         todoItem.appendChild(completeButton);
         todoItem.appendChild(deleteButton);
 
-        todoInput.value = ""
+        todoInput.value = "";
 
         todoItem.addEventListener("mouseover", function() {
             let buttons = this.querySelectorAll(".complete-button, .delete-button");
@@ -39,6 +40,19 @@ function addTodo(){
             for (let j = 0; j < buttons.length; j++) {
                 buttons[j].style.display = "none";
             }
+        });
+        
+        deleteButton.addEventListener("click", function(){
+            todoList.removeChild(todoItem);
+        });
+        
+        completeButton.addEventListener("click", function(){
+
+            todoList.removeChild(todoItem);
+            completeList.appendChild(todoItem);
+            todoItem.removeChild(completeButton);
+            todoItem.removeChild(deleteButton);
+            
         });
     }
 }
