@@ -1,3 +1,6 @@
+body{
+    background-color: #2e2e29;
+}
 .todo-list-wrapper{
     width: 80%;
     margin: 10px auto;
@@ -16,17 +19,19 @@
 }
 .todo-input-wrapper input{
     width: 70%;
-    height: 25px;
+    height: 35px;
     margin-bottom: 20px;
     padding: 0;
+    font-size: 20px;
+    border: 1px solid #555555;  
 
 }
 .todo-input-wrapper button{
     width: 10%;
-    height: 28px;
+    height: 35px;
     margin-left: 15px;
     padding: 0;
-    background-color: #33ffff;
+    background-color: #338bff;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -63,7 +68,7 @@
 /* TODO ITEM */
 .todo-item{
     height: 60px; 
-    border-top: 1px solid black ;
+    border-top: 1px solid #555555 ;
     display: flex;
     align-items: center;
 }
@@ -73,6 +78,7 @@
     float: left;
     font-size: 1.5em;
 }
+/* BUTTONS */
 .complete-button{
     width: 10%;
     height: 30px;
